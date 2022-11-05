@@ -1,0 +1,34 @@
+import WasmI32 from "runtime/unsafe/wasmi32"
+import WasmI64 from "runtime/unsafe/wasmi64"
+
+export foreign wasm resolve: (
+  WasmI32,
+  WasmI32,
+  WasmI64,
+  WasmI32,
+) -> WasmI32 from "lunatic::networking"
+export foreign wasm resolve_next: (
+  WasmI64,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+) -> WasmI32 as resolveNext from "lunatic::networking"
+export foreign wasm drop_dns_iterator: WasmI64 -> Void as dropDNSIterator from "lunatic::networking"
+export foreign wasm tcp_bind: (
+  WasmI32,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+) -> WasmI32 as tcpBind from "lunatic::networking"
+export foreign wasm udp_bind: (
+  WasmI32,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+  WasmI32,
+) -> WasmI32 as tcpBind from "lunatic::networking"
